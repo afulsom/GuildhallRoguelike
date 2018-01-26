@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<TileDefinitions>
+	<TileDefinition name="grass" isSolid="false" isOpaque="false">
+		<Glyph glyph=","/>
+		<GlyphColor glyphColor="50, 110, 50"/>
+    <GlyphColor glyphColor="40, 100, 40"/>
+    <FillColor fillColor="25, 90, 25"/>
+		<FillColor fillColor="30, 80, 30"/>
+	</TileDefinition>
+
+  <TileDefinition name="dirt path" isSolid="false" isOpaque="false">
+		<Glyph glyph=" "/>
+		<GlyphColor glyphColor="210, 180, 140"/>
+    <FillColor fillColor="210, 180, 140"/>
+    <FillColor fillColor="200, 170, 130"/>
+	</TileDefinition>
+    
+	<TileDefinition name="stone floor" isSolid="false" isOpaque="false">
+		<Glyph glyph="."/>
+		<GlyphColor glyphColor="200, 200, 200"/>
+		<FillColor fillColor="130, 130, 130"/>
+	</TileDefinition>
+	
+	<TileDefinition name="stone wall" isSolid="true" isOpaque="true">
+		<Glyph glyph="#"/>
+		<GlyphColor glyphColor="200, 200, 200"/>
+		<FillColor fillColor="80,80,80"/>
+	</TileDefinition>
+
+  <TileDefinition name="rough stone wall" isSolid="true" isOpaque="true">
+    <Glyph glyph="#"/>
+    <GlyphColor glyphColor="180, 180, 180"/>
+    <GlyphColor glyphColor="210, 210, 210"/>
+    <GlyphColor glyphColor="190, 190, 190"/>
+    <FillColor fillColor="45,45,45"/>
+    <FillColor fillColor="55,55,55"/>
+    <FillColor fillColor="50,50,50"/>
+  </TileDefinition>
+
+  <TileDefinition name="railing" isSolid="true" isOpaque="false">
+    <SolidExceptions tags="flying"/>
+    <Glyph glyph="#"/>
+    <GlyphColor glyphColor="45, 45, 45"/>
+    <FillColor fillColor="120, 120, 120"/>
+  </TileDefinition>
+  
+	<TileDefinition name="cloud" isSolid="false" isOpaque="false">
+		<Glyph glyph=" "/>
+		<GlyphColor glyphColor="255, 255, 255"/>
+    <FillColor fillColor="250, 250, 250"/>
+		<FillColor fillColor="245, 245, 245"/>
+  	<FillColor fillColor="247, 247, 247"/>
+	</TileDefinition>
+  
+	<TileDefinition name="void" isSolid="false" isOpaque="false">
+		<Glyph glyph=" "/>
+		<GlyphColor glyphColor="0, 0, 0"/>
+    <FillColor fillColor="0, 0, 0"/>
+	</TileDefinition>
+
+
+</TileDefinitions>

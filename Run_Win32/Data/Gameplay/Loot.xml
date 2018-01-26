@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LootTables>
+  <LootTable name="pixieLoot">
+    <Loot name="frostbrand" weight="3"/>
+  </LootTable>
+  <LootTable name="jackLoot">
+    <Loot name="firebrand" weight="3"/>
+  </LootTable>
+  <LootTable name="macguffinLoot">
+    <Loot name="macguffin" weight="1"/>
+  </LootTable>
+</LootTables>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Characters>
+  
+  <Character name="player" glyph="@" glyphColor="255,255,255" fillColor="255,255,255" faction="allies"
+    minStrength="3" maxStrength="3"
+		minAgility="3" maxAgility="3"
+		minMagic="3" maxMagic="3"
+		minEndurance="3" maxEndurance="3"
+		minLuck="3" maxLuck="3"
+    minHP="50" maxHP="50">
+    <Behaviors>
+      <Wander/>
+    </Behaviors>
+  </Character>
+
+  <Character name="pixie" glyph="p" glyphColor="135,206,250" fillColor="255,255,255" faction="enemies"
+		minStrength="2" maxStrength="3"
+		minAgility="3" maxAgility="3"
+		minMagic="3" maxMagic="5"
+		minEndurance="1" maxEndurance="1"
+		minLuck="1" maxLuck="4"
+    minHP="3" maxHP="5">
+    <Behaviors>
+      <Wander/>
+      <Flee/>
+      <Pursue/>
+      <Attack/>
+    </Behaviors>
+    <Loot name="pixieLoot"/>
+    <PathingCostBiases>
+      <Bias tile="stone floor" cost="2.0"/>
+    </PathingCostBiases>
+    <Tags tags="flying"/>
+    <DamageTypeWeaknesses tags="pierce,ice,curse"/>
+    <DamageTypeResistances tags="electricity"/>
+    <DamageTypeImmunities tags="bless"/>
+  </Character>
+
+  <Character name="jack-o'-lantern" glyph="j" glyphColor="255,140,0" fillColor="255,255,255" faction="enemies"
+		minStrength="2" maxStrength="3"
+		minAgility="3" maxAgility="3"
+		minMagic="3" maxMagic="5"
+		minEndurance="1" maxEndurance="1"
+		minLuck="1" maxLuck="4"
+    minHP="6" maxHP="7">
+    <Behaviors>
+      <Patrol tags="patrolWayPoint"/>
+    </Behaviors>
+    <Loot name="jackLoot"/>
+    <DamageTypeWeaknesses tags="ice"/>
+    <DamageTypeImmunities tags="!ice"/>
+  </Character>
+
+  <Character name="asmodeus" glyph="A" glyphColor="255,30,30" fillColor="255,255,255" faction="enemies"
+  minStrength="4" maxStrength="5"
+  minAgility="3" maxAgility="3"
+  minMagic="3" maxMagic="5"
+  minEndurance="3" maxEndurance="3"
+  minLuck="1" maxLuck="4"
+  minHP="15" maxHP="15">
+    <Behaviors>
+      <Wander/>
+      <Pursue/>
+      <Attack/>
+    </Behaviors>
+    <Loot name="macguffinLoot"/>
+    <DamageTypeWeaknesses tags="fire"/>
+    <DamageTypeResistances tags="ice"/>
+  </Character>
+
+</Characters>

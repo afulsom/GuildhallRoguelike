@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Adventures>
+
+  <Adventure name="Test" title="Climb the Tower" >
+    <StartConditions startMap="Map4" startTile="grass" startText="Get to the top of the tower!"/>
+    <VictoryConditions haveItems="macguffin" victoryText="Yay!"/>
+    <DefeatConditions defeatText="Nooooooo..."/>
+    <Map name="Map1" definition="OutdoorCorridors" >
+      <Character type="pixie" onTileType="grass"/>
+      <Character type="pixie" onTileType="grass"/>
+      <Character type="pixie" onTileType="grass"/>
+      <Character type="pixie" onTileType="grass"/>
+      <Character type="jack-o'-lantern" onTileType="stone floor"/>
+      <Character type="jack-o'-lantern" onTileType="stone floor"/>
+      <Exit type="StairsUp" onTileType="stone floor" destinationMap="Map2" destinationTile="stone floor" createDestinationFeature="StairsDown"/>
+    </Map>
+    <Map name="Map2" definition="UpperTowers">
+      <Character type="pixie" onTileType="grass"/>
+      <Character type="pixie" onTileType="grass"/>
+      <Character type="pixie" onTileType="grass"/>
+      <Character type="pixie" onTileType="grass"/>
+      <Character type="jack-o'-lantern" onTileType="stone floor"/>
+      <Character type="jack-o'-lantern" onTileType="stone floor"/>
+      <Exit type="StairsUp" onTileType="stone floor" destinationMap="Map3" destinationTile="stone floor"/>
+    </Map>
+    <Map name="Map3" definition="HighestTower">
+      <Character type="asmodeus" onTileType="stone floor"/>
+    </Map>
+    <Map name="Map4" definition="Outdoors">
+      <Character type="jack-o'-lantern" onTileType="dirt path"/>
+      <Character type="jack-o'-lantern" onTileType="dirt path"/>
+      <Character type="jack-o'-lantern" onTileType="dirt path"/>
+      <Character type="jack-o'-lantern" onTileType="dirt path"/>
+      <Character type="jack-o'-lantern" onTileType="dirt path"/>
+      <Exit type="StairsUp" onTileType="stone floor" destinationMap="Map1" destinationTile="stone floor" createDestinationFeature="StairsDown"/>
+    </Map>
+  </Adventure>
+  
+</Adventures>

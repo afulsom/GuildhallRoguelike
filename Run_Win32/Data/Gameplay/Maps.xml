@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MapDefinitions>
+  
+  <MapDefinition name="Rooms" dimensions="32,18" fillTile="rough stone wall">
+    <Generators>
+      <RoomsAndPaths name="rooms" numRooms="3" minRoomDimensions="3,3" maxRoomDimensions="6,6" roomFloorTile="stone floor" roomWallTile="stone wall" pathTile="grass" roomFloorPermanence="0.7" roomWallPermanence="0.3" pathPermanence="0.5" possibleOverlaps="2" pathStraightness="1.f"/>
+    </Generators>
+  </MapDefinition>
+
+  <MapDefinition name="Outdoors" dimensions="32,18" fillTile="grass">
+    <Generators>
+      <RoomsAndPaths name="rocks" numRooms="6" minRoomDimensions="1,1" maxRoomDimensions="2,2" roomFloorTile="rough stone wall" roomWallTile="grass" pathTile="grass" roomFloorPermanence="0.5" possibleOverlaps="9999"/>
+      <RoomsAndPaths name="tower entrance" numRooms="1" minRoomDimensions="4,4" maxRoomDimensions="5,5" roomFloorTile="stone floor" roomWallTile="stone wall" pathTile="stone floor" roomFloorPermanence="0.9" roomWallPermanence="0.7"/>
+      <RoomsAndPaths name="path" numRooms="8" minRoomDimensions="1,1" maxRoomDimensions="1,1" roomFloorTile="dirt path" roomWallTile="grass" pathTile="dirt path" roomFloorPermanence="0.7" roomWallPermanence="0.0" pathPermanence="0.7"/>
+      <CellularAutomata name="patrolWayPoints" iterations="1">
+        <Rule ifTile="dirt path" ifNeighborTile="grass" changeToTile="dirt path" setTags="patrolWayPoint" ifGreaterThan="1" chanceToRunPerTile="0.2"/>
+      </CellularAutomata>
+      <CellularAutomata name="tower openings" iterations="1" permanence="1.0">
+        <Rule ifTile="stone wall" ifNeighborTile="grass" changeToTile="stone floor" ifGreaterThan="0" chanceToRunPerTile="0.2"/>
+      </CellularAutomata>
+    </Generators>
+  </MapDefinition>
+
+  <MapDefinition name="LotsOfGenerators" dimensions="32,18" fillTile="grass">
+    <Generators>
+      <RoomsAndPaths name="rocks" numRooms="3" minRoomDimensions="2,2" maxRoomDimensions="3,3" roomFloorTile="rough stone wall" roomWallTile="grass" pathTile="grass" roomFloorPermanence="0.3" roomWallPermanence="0.0" pathPermanence="0.0" possibleOverlaps="9999"/>
+      <RoomsAndPaths name="rooms" numRooms="4" minRoomDimensions="3,3" maxRoomDimensions="5,5" roomFloorTile="stone floor" roomWallTile="stone wall" pathTile="grass" roomFloorPermanence="0.5" roomWallPermanence="0.2" pathPermanence="0.21" possibleOverlaps="9999"/>
+      <RoomsAndPaths name="small rocks" numRooms="10" minRoomDimensions="1,1" maxRoomDimensions="1,1" roomFloorTile="rough stone wall" roomWallTile="grass" pathTile="grass" roomFloorPermanence="0.7" roomWallPermanence="0.0" pathPermanence="0.0" possibleOverlaps="9999"/>
+    </Generators>
+  </MapDefinition>
+
+  <MapDefinition name="CATest" dimensions="32,18" fillTile="grass">
+    <Generators>
+      <RoomsAndPaths name="rooms" numRooms="4" minRoomDimensions="3,3" maxRoomDimensions="5,5" roomFloorTile="stone floor" roomWallTile="stone wall" pathTile="stone floor" roomFloorPermanence="0.5" roomWallPermanence="0.2" pathPermanence="0.21" possibleOverlaps="9999"/>
+      <CellularAutomata name="test" iterations="1">
+        <Rule ifTile="grass" ifNeighborTile="stone wall" changeToTile="stone wall" ifGreaterThan="1" chanceToRunPerTile="1.0"/>
+      </CellularAutomata>
+    </Generators>
+  </MapDefinition>
+
+  <MapDefinition name="PerlinTest" dimensions="32,18" fillTile="grass">
+    <Generators>
+      <Perlin name="test">
+        <Rule ifTile="grass" changeToTile="rough stone wall" ifGreaterThan="0.6" ifLessThan="1.0" chanceToRunPerTile="1.0"/>
+      </Perlin>
+      <Perlin name="test" seed="3453">
+        <Rule ifTile="rough stone wall" changeToTile="stone wall" ifGreaterThan="0.5" ifLessThan="0.7" chanceToRunPerTile="1.0"/>
+      </Perlin>
+      <Perlin name="test" seed="3453">
+        <Rule ifTile="stone wall" changeToTile="stone floor" ifGreaterThan="0.5" ifLessThan="0.6" chanceToRunPerTile="1.0"/>
+      </Perlin>
+    </Generators>
+  </MapDefinition>
+
+  <MapDefinition name="OutdoorCorridors" dimensions="32,18" fillTile="grass">
+    <Generators>
+      <RoomsAndPaths name="rooms" numRooms="7" minRoomDimensions="3,3" maxRoomDimensions="4,4" roomFloorTile="stone floor" roomWallTile="stone wall" pathTile="stone floor" roomFloorPermanence="0.7" roomWallPermanence="0.3" pathPermanence="0.5" possibleOverlaps="0" pathStraightness="1.f"/>
+      <CellularAutomata name="railings" iterations="1">
+        <Rule ifTile="grass" ifNeighborTile="stone floor" changeToTile="railing" ifGreaterThan="0" chanceToRunPerTile="1.0"/>
+      </CellularAutomata>
+      <CellularAutomata name="outdoors" iterations="1">
+        <Rule ifTile="grass" ifNeighborTile="grass" changeToTile="grass" setTags="outdoor" ifGreaterThan="-1" chanceToRunPerTile="1.0"/>
+      </CellularAutomata>
+      <CellularAutomata name="patrolWayPoints" iterations="1">
+        <Rule ifTile="stone floor" ifNeighborTile="stone floor" changeToTile="stone floor" setTags="patrolWayPoint" ifGreaterThan="7" chanceToRunPerTile="0.5"/>
+      </CellularAutomata>
+    </Generators>
+  </MapDefinition>
+
+  <MapDefinition name="UpperTowers" dimensions="32,18" fillTile="grass">
+    <Generators>
+      <RoomsAndPaths name="rooms" numRooms="7" minRoomDimensions="3,3" maxRoomDimensions="4,4" roomFloorTile="stone floor" roomWallTile="stone wall" pathTile="stone floor" roomFloorPermanence="0.7" roomWallPermanence="0.3" pathPermanence="0.5" possibleOverlaps="0" pathStraightness="1.f"/>
+      <CellularAutomata name="railings" iterations="1">
+        <Rule ifTile="grass" ifNeighborTile="stone floor" changeToTile="railing" ifGreaterThan="0" chanceToRunPerTile="1.0"/>
+      </CellularAutomata>
+      <Perlin name="clouds">
+        <Rule ifTile="grass" changeToTile="cloud" ifGreaterThan="0.5" ifLessThan="0.7" chanceToRunPerTile="1.0"/>
+      </Perlin>
+      <CellularAutomata name="cloud edges" iterations="1">
+        <Rule ifTile="grass" ifNeighborTile="cloud" changeToTile="cloud" ifGreaterThan="0" chanceToRunPerTile="0.3"/>
+      </CellularAutomata>
+      <CellularAutomata name="patrolWayPoints" iterations="1">
+        <Rule ifTile="stone floor" ifNeighborTile="stone floor" changeToTile="stone floor" setTags="patrolWayPoint" ifGreaterThan="7" chanceToRunPerTile="0.5"/>
+      </CellularAutomata>
+    </Generators>
+  </MapDefinition>
+
+  <MapDefinition name="HighestTower" dimensions="32,18" fillTile="void">
+    <Generators>
+      <RoomsAndPaths name="rooms" numRooms="3" minRoomDimensions="5,5" maxRoomDimensions="8,8" roomFloorTile="stone floor" roomWallTile="railing" pathTile="stone floor" roomFloorPermanence="0.7" roomWallPermanence="0.3" pathPermanence="0.5" possibleOverlaps="9999" pathStraightness="1.f"/>
+      <CellularAutomata name="railings" iterations="1">
+        <Rule ifTile="void" ifNeighborTile="stone floor" changeToTile="railing" ifGreaterThan="0" chanceToRunPerTile="1.0"/>
+      </CellularAutomata>
+      <Perlin name="clouds">
+        <Rule ifTile="void" changeToTile="cloud" ifGreaterThan="0.5" ifLessThan="0.7" chanceToRunPerTile="1.0"/>
+      </Perlin>
+      <CellularAutomata name="cloud edges" iterations="1">
+        <Rule ifTile="void" ifNeighborTile="cloud" changeToTile="cloud" ifGreaterThan="0" chanceToRunPerTile="0.3"/>
+      </CellularAutomata>
+    </Generators>
+  </MapDefinition>
+
+</MapDefinitions>
